@@ -20,12 +20,12 @@ from logging.handlers import SysLogHandler
 
 from google.oauth2 import service_account
 
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(BASE_DIR / 'email_automation' / '.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
